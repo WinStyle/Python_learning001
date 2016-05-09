@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load comments %}
+{% block page-content %}
+{{ bbs_obj.title }}
+
+<br>
+{{ bbs_obj.content }}
+ <hr>
+{% render_comment_form for bbs_obj %}
+
+{% get_comment_count for bbs_obj as comment_count %}
+{{ comment_count }}
+{% render_comment_list for bbs_obj %}
+{% endblock page-content %}
